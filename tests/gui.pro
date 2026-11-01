@@ -1,0 +1,12 @@
+QT += core gui widgets dbus network testlib
+CONFIG += console testcase c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-gui-tests
+INCLUDEPATH += ../src
+SOURCES += test_gui.cpp ../src/core.cpp ../src/presets.cpp ../src/cpu.cpp ../src/hardware.cpp ../src/telemetry.cpp ../src/backend.cpp ../src/window.cpp ../src/window_profiles.cpp ../src/reference_control.cpp ../src/reference_thermal.cpp ../src/reference_standard.cpp ../src/reference_runtime.cpp ../src/reference_ownership.cpp ../src/reference_json.cpp
+HEADERS += ../src/core.h ../src/cpu.h ../src/hardware.h ../src/telemetry.h ../src/backend.h ../src/window.h ../src/reference_control.h ../src/reference_thermal.h ../src/reference_standard.h ../src/reference_runtime.h ../src/reference_ownership.h ../src/reference_json.h
+RESOURCES += ../resources/resources.qrc
+SOURCES += ../src/fan_client.cpp
+HEADERS += ../src/fan_client.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

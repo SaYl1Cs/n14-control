@@ -1,0 +1,9 @@
+QT += core testlib
+CONFIG += console testcase c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-sensor-tests
+INCLUDEPATH += ../src ../service
+SOURCES += test_sensor.cpp ../service/sensor_sampler.cpp ../src/reference_ownership.cpp
+HEADERS += ../service/sensor_sampler.h ../src/reference_ownership.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

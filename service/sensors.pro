@@ -1,0 +1,10 @@
+QT += core
+QT -= gui
+CONFIG += console c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-sensors-service
+INCLUDEPATH += ../src
+SOURCES += sensors_main.cpp sensor_sampler.cpp ../src/reference_ownership.cpp
+HEADERS += sensor_sampler.h ../src/reference_ownership.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

@@ -1,0 +1,30 @@
+[Unit]
+Description=N14 Control bounded CPU and exclusive N14 EC hardware service
+Wants=n14-sensors.service
+After=dbus.service n14-sensors.service
+
+[Service]
+Type=dbus
+BusName=org.n14control.Hardware1
+ExecStart=/usr/local/libexec/n14-hardware-service
+User=root
+RuntimeDirectory=colorful-n14-control
+RuntimeDirectoryPreserve=yes
+RuntimeDirectoryMode=0700
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX
+ReadOnlyPaths=/sys/bus/pci/devices /sys/devices
+ReadWritePaths=/sys/devices/system/cpu /proc/acpi/call /run/colorful-n14-control
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

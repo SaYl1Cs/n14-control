@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "integration": {
+    "repository": "https://github.com/SaYl1Cs/colorful-n14-coolercontrol.git",
+    "branch_at_verification": "main",
+    "commit": "4967a3e73105014fb640150587e538c6ca594941",
+    "tree": "4bd22fa3364f9ec51e0e0d078bc6a5acbfb0998c"
+  },
+  "dependencies": {
+    "coolercontrol": {
+      "repository": "https://gitlab.com/coolercontrol/coolercontrol.git",
+      "version": "5.0.1",
+      "commit": "d9201247d6f61a5ddf8e2af8faa3aba10641e340",
+      "patch_from_integration": "patches/coolercontrold-producer-provenance.patch"
+    },
+    "custom_device": {
+      "repository": "https://gitlab.com/coolercontrol/cc-plugin-custom-device.git",
+      "version": "0.2.0",
+      "commit": "4e7268179a521f625ef00ab2c7f3de34d2e81c74",
+      "patch_from_integration": "patches/custom-device-producer-provenance.patch"
+    }
+  },
+  "excluded_local_commit": "df9155abd687cf7bc275d0bd73cb2c967a52bc5e",
+  "reference_test_modules": [
+    "test_no_emergency_override",
+    "test_keylight",
+    "test_hot_curves",
+    "test_quiet_lifecycle",
+    "test_sleep_coordination",
+    "test_sleeping_temperature",
+    "test_integration_protocol"
+  ]
+}

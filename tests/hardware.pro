@@ -1,0 +1,13 @@
+QT += core dbus testlib
+QT -= gui
+CONFIG += console testcase c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-hardware-tests
+INCLUDEPATH += ../src
+SOURCES += test_hardware.cpp ../src/hardware.cpp ../src/cpu.cpp ../src/reference_control.cpp ../src/reference_standard.cpp ../src/reference_ownership.cpp
+HEADERS += ../src/hardware.h ../src/cpu.h ../src/reference_control.h ../src/reference_standard.h ../src/reference_ownership.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic
+INCLUDEPATH += ../service
+SOURCES += ../service/fan_controller.cpp ../src/fan_client.cpp ../src/core.cpp ../src/presets.cpp ../src/reference_json.cpp
+HEADERS += ../service/fan_controller.h ../src/fan_client.h ../src/core.h ../src/reference_json.h

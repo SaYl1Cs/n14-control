@@ -1,0 +1,32 @@
+[Unit]
+Description=Read-only native EC CPU/GPU snapshot sampler for COLORFUL N14
+After=local-fs.target
+Before=n14-hardware.service
+
+[Service]
+Type=notify
+ExecStart=/usr/local/libexec/n14-sensors-service
+ExecStopPost=/usr/bin/rm -f /run/n14-control/temperatures.json
+User=root
+RuntimeDirectory=n14-control
+RuntimeDirectoryMode=0700
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX
+ReadOnlyPaths=/sys/kernel/debug/ec/ec0/io /sys/bus/pci/devices /sys/devices
+ReadWritePaths=/run/n14-control
+UMask=0077
+TimeoutStartSec=30
+
+[Install]
+WantedBy=multi-user.target

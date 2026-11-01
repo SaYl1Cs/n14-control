@@ -1,0 +1,12 @@
+QT += core dbus testlib
+QT -= gui
+CONFIG += console testcase c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-service-tests
+INCLUDEPATH += ../src ../service
+SOURCES += test_service.cpp ../service/service.cpp ../src/cpu.cpp ../src/reference_control.cpp ../src/reference_thermal.cpp ../src/reference_runtime.cpp ../src/reference_ownership.cpp ../src/reference_transaction.cpp ../src/reference_broker.cpp ../src/reference_json.cpp ../src/reference_power.cpp
+HEADERS += ../service/service.h ../src/cpu.h ../src/reference_control.h ../src/reference_thermal.h ../src/reference_runtime.h ../src/reference_ownership.h ../src/reference_transaction.h ../src/reference_broker.h ../src/reference_json.h ../src/reference_power.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic
+SOURCES += ../service/fan_controller.cpp ../src/hardware.cpp ../src/fan_client.cpp ../src/core.cpp ../src/presets.cpp ../src/reference_standard.cpp
+HEADERS += ../service/fan_controller.h ../src/hardware.h ../src/fan_client.h ../src/core.h ../src/reference_standard.h

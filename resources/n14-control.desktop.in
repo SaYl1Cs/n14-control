@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=N14 Control
+Name[ru]=N14 Control
+Comment=Power, cooling and keyboard backlight control for COLORFUL N14
+Comment[ru]=Управление питанием, охлаждением и подсветкой COLORFUL N14
+Exec="@BINDIR@/n14-control"
+Icon=n14-control
+Terminal=false
+Categories=Settings;HardwareSettings;
+StartupNotify=true

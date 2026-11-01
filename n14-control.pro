@@ -1,0 +1,11 @@
+QT += core gui widgets dbus network
+CONFIG += c++20 release
+CONFIG -= debug app_bundle
+TARGET = n14-control
+TEMPLATE = app
+SOURCES += src/main.cpp src/core.cpp src/cpu.cpp src/presets.cpp src/hardware.cpp src/hardware_integration.cpp src/telemetry.cpp src/backend.cpp src/window.cpp src/window_profiles.cpp src/reference_control.cpp src/reference_thermal.cpp src/reference_standard.cpp src/reference_runtime.cpp src/reference_ownership.cpp src/reference_transaction.cpp src/reference_broker.cpp src/reference_json.cpp src/reference_power.cpp
+HEADERS += src/core.h src/cpu.h src/presets.cpp src/hardware.h src/hardware_integration.h src/telemetry.h src/backend.h src/window.h src/reference_control.h src/reference_thermal.h src/reference_standard.h src/reference_runtime.h src/reference_ownership.h src/reference_transaction.h src/reference_broker.h src/reference_json.h src/reference_power.h
+RESOURCES += resources/resources.qrc
+SOURCES += src/fan_client.cpp
+HEADERS += src/fan_client.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

@@ -1,0 +1,10 @@
+QT += core dbus
+QT -= gui
+CONFIG += console c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-hardware-service
+INCLUDEPATH += ../src
+SOURCES += main.cpp service.cpp ../src/cpu.cpp ../src/reference_control.cpp ../src/reference_thermal.cpp ../src/reference_runtime.cpp ../src/reference_ownership.cpp ../src/reference_transaction.cpp ../src/reference_broker.cpp ../src/reference_json.cpp ../src/reference_power.cpp
+HEADERS += service.h ../src/cpu.h ../src/reference_control.h ../src/reference_thermal.h ../src/reference_runtime.h ../src/reference_ownership.h ../src/reference_transaction.h ../src/reference_broker.h ../src/reference_json.h ../src/reference_power.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

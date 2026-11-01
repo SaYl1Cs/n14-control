@@ -1,0 +1,10 @@
+QT += core dbus
+QT -= gui
+CONFIG += console c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-hardware-lifecycle-probe
+INCLUDEPATH += ../src
+SOURCES += hardware_lifecycle_probe.cpp ../src/hardware.cpp ../src/cpu.cpp ../src/reference_control.cpp ../src/reference_standard.cpp ../src/reference_ownership.cpp
+HEADERS += ../src/hardware.h ../src/cpu.h ../src/reference_control.h ../src/reference_standard.h ../src/reference_ownership.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "repository": "https://gitlab.com/coolercontrol/coolercontrol",
+  "commit": "d9201247d6f61a5ddf8e2af8faa3aba10641e340",
+  "files": {
+    "functions.rs": {"path": "coolercontrold/daemon/src/engine/processors/functions.rs", "sha256": "1056bc86696d037d7fb2c7ee010b4e1e1b365acf265a79b7aa503f2d5192ed12"},
+    "profiles.rs": {"path": "coolercontrold/daemon/src/engine/processors/profiles.rs", "sha256": "168a713ffee362637d17c434d40905b6c576b4d94c59b3287ef110abe10965d9"},
+    "utils.rs": {"path": "coolercontrold/daemon/src/engine/utils.rs", "sha256": "488f3a9b8ff6cb54e5597ded66c56221423a0dd9c234a10da66cd4d53cd39fae"},
+    "setting.rs": {"path": "coolercontrold/daemon/src/setting.rs", "sha256": "ca2bb14f87089cf578491a57d0625025144adf1c008a82d4b9e08e06a1b36ea0"},
+    "mod.rs": {"path": "coolercontrold/daemon/src/engine/mod.rs", "sha256": "a6e73866e72a305cd250c9d44c520262912786e906c34a6ac8c2bf1a47629788"}
+  }
+}

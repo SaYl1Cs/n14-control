@@ -1,0 +1,10 @@
+// OPTIONAL, explicitly user-authorized local CPU automation permission.
+// Install as /etc/polkit-1/rules.d/49-n14-cpu-automation-yaroslav.rules (root:root 0644).
+// This authorizes CPU changes for the named active local user, not one binary.
+// The root N14 service still validates fixed-path requests, bounds and readback.
+polkit.addRule(function(action, subject) {
+    if (action.id === "org.n14control.modify-cpu" &&
+        subject.user === "yaroslav" && subject.local && subject.active) {
+        return polkit.Result.YES;
+    }
+});

@@ -1,0 +1,23 @@
+[Unit]
+Description=N14 Control independent Standard fan-curve controller (pre-login)
+Requires=n14-hardware.service n14-sensors.service
+After=dbus.service home.mount n14-hardware.service n14-sensors.service
+Before=display-manager.service graphical.target
+
+[Service]
+Type=dbus
+BusName=org.n14control.Fans1
+User=yaroslav
+Group=yaroslav
+ExecStart=/usr/local/libexec/n14-fan-controller --config /home/yaroslav/.config/N14/n14-control/config.json
+Restart=no
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=yes
+RestrictAddressFamilies=AF_UNIX
+UMask=0077
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

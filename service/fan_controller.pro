@@ -1,0 +1,10 @@
+QT += core dbus
+QT -= gui
+CONFIG += console c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-fan-controller
+INCLUDEPATH += ../src
+SOURCES += fan_main.cpp fan_controller.cpp ../src/core.cpp ../src/presets.cpp ../src/hardware.cpp ../src/cpu.cpp ../src/reference_control.cpp ../src/reference_standard.cpp ../src/reference_ownership.cpp ../src/reference_json.cpp
+HEADERS += fan_controller.h ../src/core.h ../src/hardware.h ../src/cpu.h ../src/reference_control.h ../src/reference_standard.h ../src/reference_ownership.h ../src/reference_json.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic

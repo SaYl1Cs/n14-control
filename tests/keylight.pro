@@ -1,0 +1,10 @@
+QT += core dbus
+QT -= gui
+CONFIG += console c++20 release
+CONFIG -= app_bundle
+TEMPLATE = app
+TARGET = n14-keylight-probe
+INCLUDEPATH += ../src
+SOURCES += keylight_probe.cpp ../src/hardware.cpp ../src/cpu.cpp ../src/telemetry.cpp ../src/reference_control.cpp ../src/reference_standard.cpp ../src/reference_ownership.cpp
+HEADERS += ../src/hardware.h ../src/cpu.h ../src/telemetry.h ../src/reference_control.h ../src/reference_standard.h ../src/reference_ownership.h
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic
